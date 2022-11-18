@@ -2,10 +2,6 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
-  // var container = $('.container-fluid');
- 
-  // var task = $("text-area");
-
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -13,27 +9,14 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   
-  var timeBlockEl = $('.time-block');
-  var saveButtonEl = timeBlockEl.children('.saveBtn');
-  var hourBlockId = $('saveBtn').parent().attr('id');
-  var descriptionEl = $('.description');
-  var description = $('textarea').val();
-  
-  function saveEvent() {
-    $.each(task, function() {
-      this.value = "";
-    });
-    descriptionEl.text(description);
+  $('.saveBtn').click(function() {
     
-    localStorage.setItem('description', description);
-  };
+    var text = $(this).siblings('.description').val();
+    var time = $(this).parent().attr('id');
   
-  saveButtonEl.on('click', function(event) {
-    event.preventDefault();
-    saveEvent();
-    localStorage.getItem('description', description).text;
-    console.log($(this).parent().attr('id'));
-  });
+    console.log("Success! You saved an event in your calendar");
+    localStorage.setItem(time, text);
+    });
   
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
@@ -67,6 +50,20 @@ $(function () {
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
+
+  // This also works, but there may be a more elegant solution to populate all textareas
+  $("#8 .description").val(localStorage.getItem("8"));
+  $("#9 .description").val(localStorage.getItem("9"));
+  $("#10 .description").val(localStorage.getItem("10"));
+  $("#11 .description").val(localStorage.getItem("11"));
+  $("#12 .description").val(localStorage.getItem("12"));
+  $("#13 .description").val(localStorage.getItem("13"));
+  $("#14 .description").val(localStorage.getItem("14"));
+  $("#15 .description").val(localStorage.getItem("15"));
+  $("#16 .description").val(localStorage.getItem("16"));
+  $("#17 .description").val(localStorage.getItem("17"));
+  $("#18 .description").val(localStorage.getItem("18"));
+  $("#19 .description").val(localStorage.getItem("19"));
 
   // TODO: Add code to display the current date in the header of the page.
   function updateClock() {
