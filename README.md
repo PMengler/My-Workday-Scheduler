@@ -6,7 +6,7 @@ This web application was created using the knowledge gained throughout the cours
 
 Screenshot of working web application
 
-https://user-images.githubusercontent.com/114950259/202790072-3192c7d6-97c1-417a-b3c1-923e61e14ffa.png
+<img width="1440" alt="Screenshot 2022-11-18 at 11 45 00 PM" src="https://user-images.githubusercontent.com/114950259/202790072-3192c7d6-97c1-417a-b3c1-923e61e14ffa.png">
 
 Installation: N/A
 
